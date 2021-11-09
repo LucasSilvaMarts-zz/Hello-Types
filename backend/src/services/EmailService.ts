@@ -9,10 +9,15 @@ interface IMailMessage {
   attachment?: string[];
 }
 
+interface IMessageDTO {
+  to: IMailTo;
+  message: IMailMessage;
+}
+
 class EmailService {
-  sendEmail(to: IMailTo, message: IMailMessage) {
+  sendEmail({to, message}: IMessageDTO) {
     console.log(`Email enviado para ${to.name}: ${message.subject}`);
   }
 }
 
-export default EmailService
+export default EmailService;
