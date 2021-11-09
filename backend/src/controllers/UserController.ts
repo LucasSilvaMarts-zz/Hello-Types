@@ -14,7 +14,7 @@ export default {
   async create(req: Request, res: Response) {
     const emailService = new EmailService();
 
-    emailService.sendEmail({
+    emailService.sendMail({
       to: {
         name: 'Lucas',
         email: 'lucassilva@vilaapps.com.br'
