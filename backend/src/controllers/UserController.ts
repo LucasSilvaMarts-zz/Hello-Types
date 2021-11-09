@@ -14,10 +14,16 @@ export default {
   async create(req: Request, res: Response) {
     const emailService = new EmailService();
 
-    emailService.sendEmail(
-      { name: 'Lucas', email: 'lucassilva@vilaapps.com.br' },
-      { subject: 'Bem-vindo ao sistema com types', body: 'ta curtindo?' },
-    );
+    emailService.sendEmail({
+      to: {
+        name: 'Lucas',
+        email: 'lucassilva@vilaapps.com.br'
+      },
+      message: {
+        subject: 'Bem-vindo ao sistema com types',
+        body: 'ta curtindo?'
+      },
+    });
 
     res.send();
   }
